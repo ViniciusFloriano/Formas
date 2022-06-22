@@ -148,7 +148,7 @@
                         <th scope="row"><?php echo $linha['id'];?></th>
                         <th scope="row"><?php echo $linha['altura'];?></th>
                         <th scope="row"><?php echo $linha['base'];?></th>
-                        <td scope="row"><?php echo $linha['cor'];?></td>
+                        <th scope="row"><?php echo "<div style='width: 4vh; height: 2vh; background: ".$linha['cor'].";'></div><br>";?></th>
                         <th scope="row"><?php echo $linha['idtabuleiro'];?></th>
                         <td scope="row"><a href="../show/mostrarret.php?id=<?php echo $linha['id']; ?>&altura=<?php echo $linha['altura'];?>&base=<?php echo $linha['base'];?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/eye.svg" alt=""></a></td>
                         <td scope="row"><a href="cadRetangulo.php?id=<?php echo $linha['id'];?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/edit.svg" alt=""></a></td>

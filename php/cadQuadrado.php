@@ -138,7 +138,7 @@
                     <tr>
                         <th scope="row"><?php echo $linha['id'];?></th>
                         <th scope="row"><?php echo $linha['lado'];?></th>
-                        <td scope="row"><?php echo $linha['cor'];?></td>
+                        <th scope="row"><?php echo "<div style='width: 2em; height: 2em; background: ".$linha['cor'].";'></div>";?></th>
                         <th scope="row"><?php echo $linha['idtabuleiro'];?></th>
                         <td scope="row"><a href="../show/mostrar.php?id=<?php echo $linha['id']; ?>&lado=<?php echo $linha['lado'];?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/eye.svg" alt=""></a></td>
                         <td scope="row"><a href="cadQuadrado.php?id=<?php echo $linha['id'];?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/edit.svg" alt=""></a></td>

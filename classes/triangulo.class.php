@@ -120,8 +120,7 @@
         }
 
         public function desenha(){
-            $str = "<div style='width: 0px; height: 0px; border-left: ".$this->lado1."vh solid transparent; border-right: ".$this->lado2."vh solid transparent; 
-            border-bottom: ".$this->lado3."vh solid ".parent::getcor().";'></div><br>";
+            $str = "<div style='width: 0px; height: 0px; border-left: ".$this->lado1."vh solid transparent; border-right: ".$this->lado2."vh solid transparent;border-bottom: ".$this->lado3."vh solid ".parent::getcor().";'></div><br>";
             return $str;
         }
 

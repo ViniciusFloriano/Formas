@@ -90,7 +90,7 @@
         }
         
         public function desenha(){
-            $str = "<div style='border-radius: 50%; display: inline-block; width: ".$this->getraio()."px; height: ".$this->getraio()."px; background: ".$this->getcor().";border: 5px solid;'></div><br>";
+            $str = "<div style='border-radius: 50%; display: inline-block; width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; background: ".$this->getcor().";border: 5px solid;'></div><br>";
             return $str;
         }
 
