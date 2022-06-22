@@ -126,7 +126,7 @@
                         <th scope="row"><?php echo $linha['id'];?></th>
                         <th scope="row"><?php echo $linha['nome'];?></th>
                         <td scope="row"><a href="../show/detalhes.php?id=<?php echo $linha['id'];?>&nome=<?php echo $linha['nome'];?>&login=<?php echo $linha['login'];?>&senha=<?php echo $linha['senha'];?>"><img src="../img/info.svg" alt=""></a></td>
-                        <td scope="row"><a href="cadUsuario.php?id=<?php echo $linha['id'];?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/edit.svg" alt=""></a></td>
+                        <td scope="row"><a href="cadUsuario.php?id=<?php echo $linha['id'];?>"><img src="../img/edit.svg" alt=""></a></td>
                         <td scope="row"><a onclick="return confirm('Deseja mesmo excluir?')" href="cadUsuario.php?id=<?php echo $linha['id'];?>&acao=excluir"><img src="../img/trash-2.svg" alt=""></a></td>
                     </tr>
                 <?php } ?> 
