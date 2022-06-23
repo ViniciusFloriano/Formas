@@ -32,9 +32,9 @@
         public function __toString() {
             return  "[Tabuleiro]<br>Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Lado: ".$this->getlado()."<br>".
-                    "Área: ".$this->Area()."<br>".
-                    "Perimetro: ".$this->Perimetro()."<br>".
-                    "Diagonal: ".$this->Diagonal()."<br>";
+                    "Área: ".round($this->Area(),2)."<br>".
+                    "Perimetro: ".round($this->Perimetro(),2)."<br>".
+                    "Diagonal: ".round($this->Diagonal(),2)."<br>";
         }
 
         public function Area() {

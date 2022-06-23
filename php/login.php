@@ -20,7 +20,7 @@
         <?php include_once "../menu.php"; ?>
     </header>
     <content>
-        <form action="login.php?acao=login" method="post" id="form">
+        <form action="login.php?acao=login" method="post" id="form" style="padding-left: 0.7px;">
             <h1>Login</h1><br>
             <div class="col-auto">
                 <div class="input-group">    

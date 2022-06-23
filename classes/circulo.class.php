@@ -25,9 +25,9 @@
             return  "[Circulo]<br>Id do Circulo: ".$this->getId()."<br>".
                     "Raio: ".$this->getraio()."<br>".
                     "Cor: ".$this->getcor()."<br>".
-                    "Área: ".$this->Area()."<br>".
-                    "Circunferência: ".$this->Circunferencia()."<br>".
-                    "Diâmetro: ".$this->Diametro()."<br>".
+                    "Área: ".round($this->Area(),2)."<br>".
+                    "Circunferência: ".round($this->Circunferencia(),2)."<br>".
+                    "Diâmetro: ".round($this->Diametro(),2)."<br>".
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>";
         }

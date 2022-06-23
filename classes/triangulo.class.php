@@ -56,8 +56,8 @@
                     "Lado2: ".$this->getlado2()."<br>".
                     "Lado3: ".$this->getlado3()."<br>".
                     "Cor: ".$this->getcor()."<br>".
-                    "Área: ".$this->Area()."<br>".
-                    "Perímetro: ".$this->Perimetro()."<br>".
+                    "Área: ".round($this->Area(),2)."<br>".
+                    "Perímetro: ".round($this->Perimetro(),2)."<br>".
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>".
                     "Tipo: ".$this->tipo()."<br>";

@@ -50,9 +50,9 @@
                     "Altura: ".$this->getaltura()."<br>".
                     "Base: ".$this->getbase()."<br>".
                     "Cor: ".$this->getcor()."<br>".
-                    "Área: ".$this->Area()."<br>".
-                    "Perímetro: ".$this->Perimetro()."<br>".
-                    "Diagonal: ".$this->Diagonal()."<br>".
+                    "Área: ".round($this->Area(),2)."<br>".
+                    "Perímetro: ".round($this->Perimetro(),2)."<br>".
+                    "Diagonal: ".round($this->Diagonal(),2)."<br>".
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>";
         }

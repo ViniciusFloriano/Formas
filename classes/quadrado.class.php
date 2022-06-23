@@ -25,9 +25,9 @@
             return  "[Quadrado]<br>Id do Quadrado: ".$this->getid()."<br>".
                     "Lado: ".$this->getlado()."<br>".
                     "Cor: ".$this->getcor()."<br>".
-                    "Área: ".$this->Area()."<br>".
-                    "Perimetro: ".$this->Perimetro()."<br>".
-                    "Diagonal: ".$this->Diagonal()."<br>".
+                    "Área: ".round($this->Area(),2)."<br>".
+                    "Perimetro: ".round($this->Perimetro(),2)."<br>".
+                    "Diagonal: ".round($this->Diagonal(),2)."<br>".
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>";
         }
