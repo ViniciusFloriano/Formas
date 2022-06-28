@@ -149,8 +149,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $tri = new Triangulo("","","","","","");
-                    $lista = $tri->listar($buscar, $procurar);
+                    $lista = Triangulo::listar($buscar, $procurar);
                     foreach ($lista as $linha) { 
                 ?>
                     <tr>

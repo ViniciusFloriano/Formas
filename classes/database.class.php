@@ -23,7 +23,7 @@
         }
     }
 
-    public static function listar($sql, $parametros=array()){
+    public static function buscar($sql, $parametros=array()){
       $conexao = self::iniciaConexao();
       $stmt = $conexao->prepare($sql);
       $stmt = self::vinculaParametros($stmt, $parametros);

@@ -85,7 +85,7 @@
                 $parametros = array(':procurar'=>$procurar);
             else 
                 $parametros = array();
-            return parent::listar($sql, $parametros);
+            return parent::buscar($sql, $parametros);
         }
 
         public function desenha(){

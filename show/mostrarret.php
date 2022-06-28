@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     include_once "../classes/retangulo.class.php";
-    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    $idretangulo = isset($_GET['idretangulo']) ? $_GET['idretangulo'] : 0;
     $altura = isset($_GET['altura']) ? $_GET['altura'] : 0;
     $base = isset($_GET['base']) ? $_GET['base'] : 0;
     $cor = isset($_GET['cor']) ? $_GET['cor'] : "";
@@ -21,7 +21,7 @@
     </header>
     <center>
     <?php 
-        $ret = new Retangulo($id, $altura, $base, $cor, $idtabuleiro);
+        $ret = new Retangulo($idretangulo, $altura, $base, $cor, $idtabuleiro);
         echo $ret."<br>";
         echo $ret->desenha();
     ?>

@@ -1,19 +1,29 @@
 <?php
     include_once '../conf/Conexao.php';
     require_once '../conf/conf.inc.php';
-    require_once 'forma.class.php';
-    class Usuario extends Forma{
+    require_once '../classes/database.class.php';
+    class Usuario extends Database{
+        private $id;
         private $nome;
         private $login;
         private $senha;
 
         public function __construct($id, $nome, $login, $senha) {
-            parent::__construct($id, '', '');
+            $this->setid($id);
             $this->setnome($nome);
             $this->setlogin($login);
             $this->setsenha($senha);
         }  
-        
+
+        public function getid() {
+            return $this->id;
+        }
+
+        public function setid($id) {
+            if (strlen($id) > 0)
+                $this->id = $id;
+        }
+
         public function getnome() {
             return $this->nome;
         }
@@ -85,7 +95,7 @@
                 $parametros = array(':procurar'=>$procurar);
             else 
                 $parametros = array();
-            return parent::listar($sql, $parametros);
+            return parent::buscar($sql, $parametros);
         }
 
         public static function select($rows="*", $where = null, $search = null, $order = null, $group = null) {

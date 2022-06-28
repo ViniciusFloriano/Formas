@@ -50,14 +50,32 @@
             return $perimetro;
         }
 
+        public function Alpha() {
+            $alpha = acos((pow($this->lado2, 2)+pow($this->lado3, 2)-pow($this->lado1, 2))/(2*$this->lado2*$this->lado3));
+            return $alpha;
+        }
+
+        public function Beta() {
+            $beta = acos((pow($this->lado1, 2)+pow($this->lado3, 2)-pow($this->lado2, 2))/(2*$this->lado1*$this->lado3));
+            return $beta;
+        }
+
+        public function Gamma() {
+            $gamma = acos((pow($this->lado1, 2)+pow($this->lado2, 2)-pow($this->lado3, 2))/(2*$this->lado1*$this->lado2));
+            return $gamma;
+        }
+
         public function __toString() {
             return  "[Triangulo]<br>Id do Triangulo: ".$this->getid()."<br>".
                     "Lado1: ".$this->getlado1()."<br>".
                     "Lado2: ".$this->getlado2()."<br>".
                     "Lado3: ".$this->getlado3()."<br>".
                     "Cor: ".$this->getcor()."<br>".
-                    "Área: ".round($this->Area(),2)."<br>".
-                    "Perímetro: ".round($this->Perimetro(),2)."<br>".
+                    "Área: ".$this->Area()."<br>".
+                    "Perímetro: ".$this->Perimetro()."<br>".
+                    "Ângulo Alpha: ".round(rad2deg($this->Alpha()),2)."°<br>".
+                    "Ângulo Beta: ".round(rad2deg($this->Beta()),2)."°<br>".
+                    "Ângulo Gamma: ".round(rad2deg($this->Gamma()),2)."°<br>".
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>".
                     "Tipo: ".$this->tipo()."<br>";
@@ -116,7 +134,7 @@
                 $parametros = array(':procurar'=>$procurar);
             else 
                 $parametros = array();
-            return parent::listar($sql, $parametros);
+            return parent::buscar($sql, $parametros);
         }
 
         public function desenha(){

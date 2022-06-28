@@ -1,6 +1,6 @@
 <?php
     require_once "database.class.php";
-    class Forma extends Database{
+    abstract class Forma extends Database{
         private $id;
         private $cor;
         private $idtabuleiro;
@@ -45,5 +45,12 @@
                     "Id do Tabuleiro: ".$this->gettabuleiro()."<br>".
                     "Contador: ".self::$contador."<br>";
         }
+
+        public abstract function inserir();
+        public abstract function excluir();
+        public abstract function editar();
+        public abstract static function listar($buscar = 0, $procurar = "");
+        public abstract function desenha();
+        public abstract function Area();
     }
 ?>
