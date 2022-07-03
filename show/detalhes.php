@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <?php
-    include_once "../classes/usuario.class.php";
-    $idusuario = isset($_GET['idusuario']) ? $_GET['idusuario'] : 0;
-    $nome = isset($_GET['nome']) ? $_GET['nome'] : "";
-    $login = isset($_GET['login']) ? $_GET['login'] : "";
-    $senha = isset($_GET['senha']) ? $_GET['senha'] : "";
+    include_once "../classes/autoload.php";
+    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    $usu = Usuario::listar($buscar = 1, $procurar = $id)
 ?>
 <html lang="en">
 <head>
@@ -20,7 +18,7 @@
     </header>
     <center>
     <?php 
-        $usu = new Usuario($idusuario, $nome, $login, $senha);
+        $usu = new Usuario($id, $usu[0]['nome'], $usu[0]['login'], $usu[0]['senha']);
         echo $usu."<br>";
     ?>
     </center>

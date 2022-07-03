@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-    include_once "../classes/tabuleiro.class.php";
+    include_once "../classes/autoload.php";
     $idtabuleiro = isset($_GET['idtabuleiro']) ? $_GET['idtabuleiro'] : 0;
-    $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;
+    $tab = Tabuleiro::listar($buscar = 1, $procurar = $idtabuleiro)
 ?>
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
     </header>
     <center>
     <?php 
-        $tab = new Tabuleiro($idtabuleiro, $lado);
+        $tab = new Tabuleiro($idtabuleiro, $tab[0]['lado']);
         echo $tab."<br>";
         echo $tab->desenha();
     ?>

@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <?php
-    include_once "../classes/triangulo.class.php";
+    include_once "../classes/autoload.php";
     $id = isset($_GET['id']) ? $_GET['id'] : 0;
-    $lado1 = isset($_GET['lado1']) ? $_GET['lado1'] : 0;
-    $lado2 = isset($_GET['lado2']) ? $_GET['lado2'] : 0;
-    $lado3 = isset($_GET['lado3']) ? $_GET['lado3'] : 0;
-    $cor = isset($_GET['cor']) ? $_GET['cor'] : "";
-    $idtabuleiro = isset($_GET['idtabuleiro']) ? $_GET['idtabuleiro'] : 0;
+    $tri = Triangulo::listar($buscar = 1, $procurar = $id)
 ?>
 <html lang="en">
 <head>
@@ -22,7 +18,7 @@
     </header>
     <center>
     <?php
-        $tri = new Triangulo($id, $cor, $idtabuleiro, $lado1, $lado2, $lado3);
+        $tri = new Triangulo($id, $tri[0]['cor'], $tri[0]['idtabuleiro'], $tri[0]['lado1'], $tri[0]['lado2'], $tri[0]['lado3']);
         echo $tri."<br>";
         echo $tri->desenha();
     ?>

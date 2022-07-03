@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include_once "../conf/default.inc.php";
-    require_once "../conf/Conexao.php";
-    require_once "../classes/triangulo.class.php";
+    include_once "../classes/autoload.php";
     $id = null;
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -95,7 +93,7 @@
                 <div class="input-group-text border border-dark rounded-start">Tabuleiro:</div>
                 <select name="idtabuleiro" id="idtabuleiro" value="" class="form-select-sm border border-dark rounded-end" aria-label="Floating label select example">
                 <?php
-                    $pdo = Conexao::getInstance();
+                    $pdo = Database::iniciaConexao();
                     $consulta = $pdo->query("SELECT * FROM tabuleiro;");
                     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 ?>
@@ -157,10 +155,9 @@
                         <th scope="row"><?php echo $linha['lado1'];?></th>
                         <th scope="row"><?php echo $linha['lado2'];?></th>
                         <th scope="row"><?php echo $linha['lado3'];?></th>
-                        <th scope="row"><?php echo "<div style='width: 0px; height: 0px; border-left: 1.5em solid transparent; border-right: 1.5em solid transparent; 
-            border-bottom: 1.5em solid ".$linha['cor'].";'></div>";?></th>
+                        <th scope="row"><?php echo "<div style='width: 0px; height: 0px; border-left: 1.5em solid transparent; border-right: 1.5em solid transparent;border-bottom: 1.5em solid ".$linha['cor'].";'></div>";?></th>
                         <th scope="row"><?php echo $linha['idtabuleiro'];?></th>
-                        <td scope="row"><a href="../show/mostrartri.php?id=<?php echo $linha['id']; ?>&lado1=<?php echo $linha['lado1'];?>&lado2=<?php echo $linha['lado2'];?>&lado3=<?php echo $linha['lado3'];?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/eye.svg" alt=""></a></td>
+                        <td scope="row"><a href="../show/mostrartri.php?id=<?php echo $linha['id'];?>"><img src="../img/eye.svg" alt=""></a></td>
                         <td scope="row"><a href="cadTriangulo.php?id=<?php echo $linha['id'];?>&idtabuleiro=<?php echo $linha['idtabuleiro'];?>"><img src="../img/edit.svg" alt=""></a></td>
                         <td><a onclick="return confirm('Deseja mesmo excluir?')" href="cadTriangulo.php?id=<?php echo $linha['id'];?>&acao=excluir"><img src="../img/trash-2.svg" alt=""></a></td>
                     </tr>

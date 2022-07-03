@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <?php
     include_once "../classes/autoload.php";
-    $id = isset($_GET['id']) ? $_GET['id'] : 0;
-    $cir = Circulo::listar($buscar = 1, $procurar = $id);
+    $idcubo = isset($_GET['idcubo']) ? $_GET['idcubo'] : 0;
+    $cubo = Cubo::listar($buscar = 1, $procurar = $idcubo);
+    $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;  
 ?>
 <html lang="en">
 <head>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotateX(-20deg) rotateY(-10deg);
+            }
+
+            50% {
+                transform: rotateX(20deg) rotateY(320deg);
+            }
+
+            to {
+                transform: rotateX(-20deg) rotateY(-20deg);
+            }
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,10 +34,9 @@
     </header>
     <center>
     <?php 
-        $cir = new Circulo($id, $cir[0]['raio'], $cir[0]['cor'], $cir[0]['idtabuleiro']);
-        echo $cir."<br>";
-        echo $cir->desenha()."<br>";
-        echo $cir->esfera()."<br>";
+        $cubo = new Cubo($idcubo, $cubo[0]['idquadrado'], $lado, $cubo[0]['cor']);
+        echo $cubo."<br><br><br>";
+        echo $cubo->desenha();
     ?>
     </center>
     <div class="card text-bg-dark mb-3"></div>

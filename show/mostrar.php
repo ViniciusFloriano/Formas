@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <?php
-    include_once "../classes/quadrado.class.php";
+    include_once "../classes/autoload.php";
     $id = isset($_GET['id']) ? $_GET['id'] : 0;
-    $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;
-    $cor = isset($_GET['cor']) ? $_GET['cor'] : "";
-    $idtabuleiro = isset($_GET['idtabuleiro']) ? $_GET['idtabuleiro'] : 0;
+    $quad = Quadrado::listar($buscar = 1, $procurar = $id);
 ?>
 <html lang="en">
 <head>
@@ -20,7 +18,7 @@
     </header>
     <center>
     <?php 
-        $quad = new Quadrado($id, $lado, $cor, $idtabuleiro);
+        $quad = new Quadrado($id, $quad[0]['lado'], $quad[0]['cor'], $quad[0]['idtabuleiro']);
         echo $quad."<br>";
         echo $quad->desenha();
     ?>

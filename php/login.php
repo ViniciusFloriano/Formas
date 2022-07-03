@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include_once "../conf/default.inc.php";
-    require_once "../conf/Conexao.php";
-    require_once "../classes/usuario.class.php";
+    include_once "../classes/autoload.php";
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $login = isset($_POST['login']) ? $_POST['login'] : "";
     $senha = isset($_POST['senha']) ? $_POST['senha'] : "";

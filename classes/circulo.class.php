@@ -116,5 +116,11 @@
             $sql .= ";";
             return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function esfera(){
+            $str = "<div style='width: ".$this->Diametro()."px;height: ".$this->Diametro()."px;background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);
+            -ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;-o-border-radius: 150px;border-radius: 50%;margin: 0px auto;'></div><br>";
+            return $str;
+        }
     }
 ?>

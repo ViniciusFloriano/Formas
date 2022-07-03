@@ -106,6 +106,21 @@ CREATE TABLE IF NOT EXISTS `recuperacao`.`usuario` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `recuperacao`.`cubo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `recuperacao`.`cubo` (
+  `idcubo` INT NOT NULL AUTO_INCREMENT,
+  `cor` VARCHAR(45) NULL,
+  `idquadrado` INT NOT NULL,
+  PRIMARY KEY (`idcubo`),
+  CONSTRAINT `fk_cubo_quadrado`
+    FOREIGN KEY (`idquadrado`)
+    REFERENCES `recuperacao`.`quadrado` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
