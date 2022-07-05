@@ -128,7 +128,7 @@
                         <th scope="row"><?php echo "<div style='width: 2em; height: 2em; background: ".$linha['cor'].";'></div>";?></th>
                         <th scope="row"><?php echo $linha['idquadrado'];?></th>
                         <td scope="row"><a href="../show/mostrarcubo.php?idcubo=<?php echo $linha['idcubo']; ?>"><img src="../img/eye.svg" alt=""></a></td>
-                        <td scope="row"><a href="cadCubo.php?idcubo=<?php echo $linha['idcubo'];?>&idquadrado=<?php echo $linha['idquadrado'];?>"><img src="../img/edit.svg" alt=""></a></td>
+                        <td scope="row"><a href="cadCubo.php?idcubo=<?php echo $linha['idcubo'];?>"><img src="../img/edit.svg" alt=""></a></td>
                         <td><a onclick="return confirm('Deseja mesmo excluir?')" href="cadCubo.php?idcubo=<?php echo $linha['idcubo'];?>&acao=excluir"><img src="../img/trash-2.svg" alt=""></a></td>
                     </tr>
                 <?php } ?> 
