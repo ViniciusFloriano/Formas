@@ -3,7 +3,6 @@
     include_once "../classes/autoload.php";
     $idcubo = isset($_GET['idcubo']) ? $_GET['idcubo'] : 0;
     $cubo = Cubo::listar($buscar = 1, $procurar = $idcubo);
-    $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;  
 ?>
 <html lang="en">
 <head>
@@ -34,7 +33,7 @@
     </header>
     <center>
     <?php 
-        $cubo = new Cubo($idcubo, $cubo[0]['idquadrado'], $lado, $cubo[0]['cor']);
+        $cubo = new Cubo($idcubo, $cubo[0]['idquadrado'], $cubo[0]['lado'], $cubo[0]['cor']);
         echo $cubo."<br><br><br>";
         echo $cubo->desenha();
     ?>

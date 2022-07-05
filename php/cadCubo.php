@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
     include_once "../classes/autoload.php";
-    include_once "../classes/quadrado.class.php";
     $idcubo = null;
     if(isset($_GET['idcubo'])) {
         $idcubo = $_GET['idcubo'];
@@ -47,10 +46,8 @@
         } catch(Exception $e) {
             echo "<h1>Erro ao excluir as informações.</h1><br> Erro:".$e->getMessage();
         }
-    } 
-    $pdo = Database::iniciaConexao();
-    $consulta = $pdo->query("SELECT lado FROM quadrado,cubo WHERE cubo.idquadrado = quadrado.id;");
-    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) { $lado = $linha['lado']; };
+    }
+
 ?>
 <html lang="en">
 <head>
@@ -116,6 +113,7 @@
                         <th scope="col">#ID</th>
                         <th scope="col">Cor</th>
                         <th scope="col">Quadrado</th>
+                        <th scope="col">Lado</th>
                         <th scope="col">Mostrar</th>
                         <th scope="col">Alterar</th>
                         <th scope="col">Deletar</th>
@@ -130,7 +128,8 @@
                         <th scope="row"><?php echo $linha['idcubo'];?></th>
                         <th scope="row"><?php echo "<div style='width: 2em; height: 2em; background: ".$linha['cor'].";'></div>";?></th>
                         <th scope="row"><?php echo $linha['idquadrado'];?></th>
-                        <td scope="row"><a href="../show/mostrarcubo.php?idcubo=<?php echo $linha['idcubo']; ?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&idquadrado=<?php echo $linha['idquadrado'];?>&lado=<?php echo $lado;?>"><img src="../img/eye.svg" alt=""></a></td>
+                        <th scope="row"><?php echo $linha['lado'];?></th>
+                        <td scope="row"><a href="../show/mostrarcubo.php?idcubo=<?php echo $linha['idcubo']; ?>&lado=<?php echo $linha['lado'];?>"><img src="../img/eye.svg" alt=""></a></td>
                         <td scope="row"><a href="cadCubo.php?idcubo=<?php echo $linha['idcubo'];?>&idquadrado=<?php echo $linha['idquadrado'];?>"><img src="../img/edit.svg" alt=""></a></td>
                         <td><a onclick="return confirm('Deseja mesmo excluir?')" href="cadCubo.php?idcubo=<?php echo $linha['idcubo'];?>&acao=excluir"><img src="../img/trash-2.svg" alt=""></a></td>
                     </tr>

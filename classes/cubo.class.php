@@ -1,4 +1,6 @@
 <?php
+    include_once '../conf/default.inc.php';
+    require_once '../conf/Conexao.php';
     require_once "quadrado.class.php";
     class Cubo extends Quadrado{
         private $idcubo;
@@ -85,12 +87,13 @@
         }
 
         public static function listar($buscar = 0, $procurar = ""){
-            $sql = "SELECT * FROM cubo";
+            $sql = "SELECT * FROM quadrado, cubo 
+            WHERE quadrado.id = cubo.idquadrado";
             if ($buscar > 0)
                 switch($buscar){
-                    case(1): $sql .= " WHERE idcubo like :procurar"; $procurar = "%".$procurar."%"; break;
-                    case(2): $sql .= " WHERE cor like :procurar"; $procurar = "%".$procurar."%"; break;
-                    case(3): $sql .= " WHERE idquadrado like :procurar"; $procurar = "%".$procurar."%"; break;
+                    case(1): $sql .= " && idcubo like :procurar"; $procurar = "%".$procurar."%"; break;
+                    case(2): $sql .= " && cor like :procurar"; $procurar = "%".$procurar."%"; break;
+                    case(3): $sql .= " && idquadrado like :procurar"; $procurar = "%".$procurar."%"; break;
                 }
             if ($buscar > 0)
                 $parametros = array(':procurar'=>$procurar);

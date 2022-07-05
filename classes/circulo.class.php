@@ -118,8 +118,14 @@
         }
 
         public function esfera(){
-            $str = "<div style='width: ".$this->Diametro()."px;height: ".$this->Diametro()."px;background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);
-            -ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;-o-border-radius: 150px;border-radius: 50%;margin: 0px auto;'></div><br>";
+            $str = "<div style='width: ".$this->Diametro()."px;height: ".$this->Diametro()."px; animation: rotate 3s infinite alternate; transform-style: preserve-3d;'>
+                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);-ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;
+                    -o-border-radius: 150px;border-radius: 50%; display: flex; width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
+                    position: absolute; transform: translateX(0px);'></div>
+                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);-ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;
+                    -o-border-radius: 150px;border-radius: 50%; display: flex; width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
+                    position: absolute; transform: rotatex(90deg) translatez(0px);'></div>
+            </div><br>";
             return $str;
         }
     }

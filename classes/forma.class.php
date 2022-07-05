@@ -1,4 +1,6 @@
 <?php
+    include_once '../conf/default.inc.php';
+    require_once '../conf/Conexao.php';
     require_once "database.class.php";
     abstract class Forma extends Database{
         private $id;

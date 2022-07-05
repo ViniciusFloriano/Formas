@@ -1,6 +1,6 @@
 <?php
-    include_once '../conf/Conexao.php';
-    require_once '../conf/conf.inc.php';
+    include_once '../conf/default.inc.php';
+    require_once '../conf/Conexao.php';
     require_once 'forma.class.php';
     class Retangulo extends Forma{
         private $altura;

@@ -1,6 +1,6 @@
 <?php
-    include_once '../conf/Conexao.php';
-    require_once '../conf/conf.inc.php';
+    include_once '../conf/default.inc.php';
+    require_once '../conf/Conexao.php';
     require_once '../classes/database.class.php';
     class Usuario extends Database{
         private $id;
