@@ -1,6 +1,4 @@
 <?php
-    include_once '../conf/Conexao.php';
-    require_once '../conf/conf.inc.php';
     require_once "quadrado.class.php";
     class Cubo extends Quadrado{
         private $idcubo;
@@ -101,20 +99,24 @@
             return parent::buscar($sql, $parametros);
         }
 
+        public function divisao(){
+            return $this->getlado() / 2;
+        }
+
         public function desenha(){
-            $str = "<div style='width: 200px; height: 200px; animation: rotate 10s infinite alternate; transform-style: preserve-3d;'>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: translateZ(100px);'></div>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: rotateY(90deg) translateZ(100px);'></div>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: rotateY(180deg) translateZ(100px);'></div>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: rotateY(-90deg) translateZ(100px);'></div>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: rotateX(90deg) translateZ(100px);'></div>
-                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: 200px; height: 200px; 
-                            position: absolute; transform: rotateX(-90deg) translateZ(100px);'></div>
+            $str = "<div style='width: ".$this->getlado()."px; height: ".$this->getlado()."px; animation: rotate 10s infinite alternate; transform-style: preserve-3d;'>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: translateZ(".$this->divisao()."px);'></div>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: rotateY(90deg) translateZ(".$this->divisao()."px);'></div>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: rotateY(180deg) translateZ(".$this->divisao()."px);'></div>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: rotateY(-90deg) translateZ(".$this->divisao()."px);'></div>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: rotateX(90deg) translateZ(".$this->divisao()."px);'></div>
+                        <div style='background: linear-gradient(45deg, ".$this->getcor().", ".$this->getcor()."); border: 2px solid black; display: flex; width: ".$this->getlado()."px; height: ".$this->getlado()."px; 
+                            position: absolute; transform: rotateX(-90deg) translateZ(".$this->divisao()."px);'></div>
                     </div><br><br><br>";
             return $str;
         }
