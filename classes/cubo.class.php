@@ -92,7 +92,7 @@
             if ($buscar > 0)
                 switch($buscar){
                     case(1): $sql .= " && idcubo like :procurar"; $procurar = "%".$procurar."%"; break;
-                    case(2): $sql .= " && cor like :procurar"; $procurar = "%".$procurar."%"; break;
+                    case(2): $sql .= " && cubo.cor like :procurar"; $procurar = "%".$procurar."%"; break;
                     case(3): $sql .= " && idquadrado like :procurar"; $procurar = "%".$procurar."%"; break;
                 }
             if ($buscar > 0)

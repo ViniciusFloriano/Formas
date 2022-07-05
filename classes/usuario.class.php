@@ -123,11 +123,13 @@
 
         public function efetuarLogin($login, $senha) {
             $pdo = Conexao::getInstance();
-            $verificacao = $this->select('nome', "login = '$login' AND senha = '$senha'");
-            if($verificacao){
-                $_SESSION["nome"] = $verificacao[0]['nome'];
+            $sql = "SELECT nome FROM usuario WHERE login = '$Login' AND senha = '$senha';";
+            $r = $pdo->query($sql)->fetchAll();
+            if($r){
+                $_SESSION['nome'] = $r[0]['nome'];
                 return true;
-            }else{
+            } else {
+                $_SESSION['nome'] = null;
                 return false;
             }
         }

@@ -23,7 +23,7 @@
             <li><a class="dropdown-item" href="../php/cadTriangulo.php">Triangulo <img src="../img/triangle.svg"></a></li>
             <li><a class="dropdown-item" href="../php/cadCirculo.php">Circulo <img src="../img/circle.svg"></a></li>
             <li><a class="dropdown-item" href="../php/cadCubo.php">Cubo <img src="../img/box.svg"></a></li>
-            <li><a class="dropdown-item" href="../php/cadEsfera.php">Esfera <img src="../img/sphere.png"></a></li>
+            <!-- <li><a class="dropdown-item" href="../php/cadEsfera.php">Esfera <img src="../img/sphere.png"></a></li> -->
           </ul>
         </li>
           <li class="nav-item dropdown">

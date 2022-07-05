@@ -9,10 +9,15 @@
     <style>
         @keyframes rotate {
             from {
-                transform: rotateX(0);
+                transform: rotateX(-20deg) rotateY(-10deg);
             }
+
+            50% {
+                transform: rotateX(20deg) rotateY(320deg);
+            }
+
             to {
-                transform: rotateX(360deg);
+                transform: rotateX(-20deg) rotateY(-20deg);
             }
         }
     </style>

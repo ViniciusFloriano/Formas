@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+    include_once "../conf/default.inc.php";
+    require_once "../conf/Conexao.php";
     include_once "../classes/autoload.php";
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $login = isset($_POST['login']) ? $_POST['login'] : "";
@@ -38,21 +40,16 @@
         <div class="card text-bg-dark mb-3"></div>
         <h1>
         <?php
-            if(isset($_SESSION['nome'])) {
-                echo "Logado com sucesso!";
-            } else if(isset($_GET['login']) && !isset($_SESSION['nome'])) {
-                echo "Informações incorretas!";
-            }
-        ?>
-        <?php
-            if($acao == "login") {
-                $usua = new Usuario('', '', '', '');
-                $usua->efetuarLogin("$login", "$senha");
-                header("location:login.php?login=true");
-            } else if($acao == "logout") {
-                $_SESSION["nome"] = null;
-                header("location:login.php");
-            }
+            error_reporting(0);
+            if($_GET['acao'] == 'login'){
+                $usu = new Usuario("","","","");
+                if ($usu->Login($login, $senha) == true){
+                    echo "Logado com sucesso!";
+                    header("location:login.php");
+                } else {
+                    echo "Informações invalidas";
+                }
+            } 
         ?>
         </h1>
     </content>

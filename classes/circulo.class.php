@@ -118,14 +118,19 @@
         }
 
         public function esfera(){
-            $str = "<div style='width: ".$this->Diametro()."px;height: ".$this->Diametro()."px; animation: rotate 3s infinite alternate; transform-style: preserve-3d;'>
-                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);-ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;
-                    -o-border-radius: 150px;border-radius: 50%; display: flex; width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
-                    position: absolute; transform: translateX(0px);'></div>
-                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);-ms-border-radius: 150px;-moz-border-radius: 150px;-webkit-border-radius: 150px;
-                    -o-border-radius: 150px;border-radius: 50%; display: flex; width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
-                    position: absolute; transform: rotatex(90deg) translatez(0px);'></div>
-            </div><br>";
+            $str = "<div style='width: ".$this->Diametro()."px;height: ".$this->Diametro()."px; animation: rotate 3s infinite alternate; transform-style: preserve-3d;'>";
+            for($i = 1; $i <= 360; $i = $i+1){
+                $str .= "
+                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);border-radius: 100%; display: flex; 
+                    width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
+                    position: absolute; transform: rotateX(".$i."deg) translateZ(0px);'>
+                </div>
+                <div style='background: radial-gradient(at top left, ".$this->getcor()." 20%, #000);border-radius: 100%; display: flex; 
+                    width: ".$this->Diametro()."px; height: ".$this->Diametro()."px; 
+                    position: absolute; transform: rotateY(".$i."deg) translateZ(0px);'>
+                </div>";
+            }
+           $str .= " </div><br>";
             return $str;
         }
     }
